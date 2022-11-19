@@ -1,3 +1,4 @@
+# A Swift Tour
 - Variables are always initialized before use
 - Array indices are checked for out of bound errors
 - integers are checked for overflow
