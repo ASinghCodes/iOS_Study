@@ -1,0 +1,45 @@
+- Variables are always initialized before use
+- Array indices are checked for out of bound errors
+- integers are checked for overflow
+- Optionals ensure that nil values are handled explicitly (what are optionals?)
+- Memory is automatically managed
+- error handling allows controlled recovery
+
+-----
+- swift has type inference (aka it automatically detects whats a int or string or char)
+
+- let == constant in swift, does not need to have value at compile time
+- var are variables
+- you can specify type by doing  let/var variableName: type = value
+- using \(variableName) in a string lets you put values into strings
+
+- Arrays and dictionaries are made by [] and commas are allowed after last element, note: if you don't put a comma at the last anything added in will be added at the start
+- Empty arrays/dicts you use initializer syntax unless inferrable type
+let emptyArray: [String] = [] or emptyArray = []
+let emptyDictionary: [String: Float] = [:] or emptyDictionary = [:]
+
+----------
+- if/switch are conditional
+- for-in, while, repeat-while are loops
+- use {} not : weirdge
+
+- An optional value either contains a value or contains nil to indicate the value is missing, write ? at the end of value to make it an optional
+
+var optionalName: String? = "John Appleseed"
+var greeting = "Hello!"
+if let name = optionalName {
+    greeting = "Hello, \(name)"
+
+name here is a temp variable to be used inside bracket, this reads as "if you can let the new variable name equal the non-optional version of optionalName, do the following with it"
+
+- alternative optional handling is with ?? operator to use default value instead
+
+let nickname: String? = nil
+let fullName: String = "John Appleseed"
+let informalGreeting = "Hi \(nickname ?? fullName)"
+
+- Switches support any kind of data and variety of comparison operations, switches also use "case <syntax> :"
+- Switch must have a match, aka if no case then there needs to be a default
+- Switch breaks out at first case matched
+
+- for-in is used to iterate over items in dictionary providing pair of names to use
