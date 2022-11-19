@@ -1,4 +1,6 @@
-#A Swift Tour
+##########################
+#      A Swift Tour      #
+##########################
 
 - Variables are always initialized before use
 - Array indices are checked for out of bound errors
