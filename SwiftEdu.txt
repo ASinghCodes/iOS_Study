@@ -9,7 +9,8 @@
 - Memory is automatically managed
 - error handling allows controlled recovery
 
------
+----------Simple Values----------
+
 - swift has type inference (aka it automatically detects whats a int or string or char)
 
 - let == constant in swift, does not need to have value at compile time
@@ -22,7 +23,8 @@
 let emptyArray: [String] = [] or emptyArray = []
 let emptyDictionary: [String: Float] = [:] or emptyDictionary = [:]
 
-----------
+----------Control Flow----------
+
 - if/switch are conditional
 - for-in, while, repeat-while are loops
 - use {} not : weirdge
@@ -47,3 +49,49 @@ let informalGreeting = "Hi \(nickname ?? fullName)"
 - Switch breaks out at first case matched
 
 - for-in is used to iterate over items in dictionary providing pair of names to use
+- Dictionaries are an unordered collection thus iteration is done in an arbitary order
+
+-While loops can be used as a do at least once loop by putting the while condition at the bottom
+
+var m = 2
+repeat {
+    m *= 2
+} while m < 100
+
+- you can use "..<" to make a range that omits upper value, likewise using only "..." makes a range that includes upper and lower
+- this seems to be like the range function in python 
+
+----------Functions and Closures----------
+
+- use keyword "func" to declare a function
+- use "->" to separate parameter names and types from function's return type
+- adding a "_" before name to define no argument label e.g. greet(_ person: String) -> String {} can be called by greet("John") instead of needing greet(person: "John")
+- Can use tuples for compound values
+- functions are allowed to be nested and have inheritance of values from outter functions
+- functions are a first-class type meaning they can return another function as its value 
+                    NOTE: While I get the concept and understanding, I feel as if I don't fully grasp the value behind this and should look into it further later on.
+- functions can also take other functions as arguments
+                    NOTE: Another topic not entirely understood, search for section stating "Functions are actually a special case of closures"
+
+----------Objects and Classes----------
+
+- Classes property decleration stay same except are in context of the class
+- instance of class is done by parentheses 
+- dot syntax is used to access specific properities and methods of that instance
+- use init to create initializer, self is used likewise in python (personally I think init should always be the very first thing in a class)
+- Every property needs a value assigned
+- deinit is used to create a deinitializer 
+                    NOTE: I should look into when deinit are used, what is the context, what should be included, etc.
+- Subclasses include their superclass name after their class name, separated by a colon
+- Subclasses that override superclass implementation are marked with "override", without this it will be detected as an error
+- in addition to simple properities, you can also have getter/setter
+                    NOTE: Look at willSet and didSet, not entirely sure where this would apply in real world application given other methods
+                    
+----------Enumerations and Structures----------
+
+- Enum is used to create an enumeration
+- raw values start at 0 but can be explicitly set
+- Struct is used to create structures
+- KEY NOTE: Struct and class are same in many ways except structures are always copied whereas classes are passed by reference
+
+----------Concurrency----------
